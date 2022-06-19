@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animated Nav</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -97,6 +97,7 @@
           </section>
           <section class="section-projects one show"> 
             <h2>Projects</h2>
+            <h3>Longest Running</h3>
             <div class="text">
               <p class="p1">
                 One that sparked my initial interest in all things web. When I took over a small business in 2017 it had almost no online presence. 
@@ -107,32 +108,45 @@
             </div>
             <div class="img"></div>
           </section>
-          <section class="section-projects show two"> 
-            <h2>Projects I am working on</h2>
+          <h3>Currently Working on</h3>
+          <section class="section-projects two show"> 
+            
             <div class="text">
               <p class="p1">
-                <span>Restaurant Ecommerce</span><br>
+                <span>Restaurant Ecommerce</span><br><br>
                 The site offers customers the ability to order food online, with a content management systems for staff users to manage the restaurant menu, and process orders.
               </p>
-              <p class="p2">
-                Technologies
+            </div>
+            <div class="tech-card">
+              <ul>
+                <li><i class="fa-brands fa-angular card-icon"></i></li>
+                <li><i class="fa-brands fa-bootstrap card-icon"></i></li>
+                <li class="logo spring"></li>
+                <li class="logo postgresql"></li>
+              </ul>
+            </div>
+            <div class="img"></div>
+          </section>
+          <section class="section-projects three show"> 
+            <div class="text">
+              <p class="p1">
+                <span>Home Audio</span><br><br>
+                I have a not so 'smart' audio amplifier used for controlling different audio zones. Luckily it has a RS232 serial port which I can use as an interface. <br> The current application is built in Angular and Node.js. This is in turn deployed on a Rasberry PI and connnected via a USB to RS232 cables.
               </p>
             </div>
-              <div class="tech-card">
-                <ul>
-                  <li><i class="fa-brands fa-angular card-icon"></i></li>
-                  <li><i class="fa-brands fa-bootstrap card-icon"></i></li>
-                  <li class="logo spring"></li>
-                  <li class="logo postgresql"></li>
-                </ul>
-              </div>
-
-
+            <div class="tech-card">
+              <ul>
+                <li><i class="fa-brands fa-angular card-icon"></i></li>
+                <li><i class="fa-brands fa-bootstrap card-icon"></i></li>
+                <li class="logo spring"></li>
+                <li class="logo postgresql"></li>
+              </ul>
+            </div>
             <div class="img"></div>
           </section>
       </div>
     </div>
       
-    <script src="./script.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>

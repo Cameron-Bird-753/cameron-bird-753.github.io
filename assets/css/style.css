@@ -267,7 +267,17 @@ nav
     letter-spacing: 2px;
     margin: 10px 10px;
     width: 100%;
+}
 
+.sections section h3
+{
+    position: absolute;
+    font-size: 20px;
+    top:50px;
+    text-align: center;
+    letter-spacing: 2px;
+    margin: 10px 10px;
+    width: 100%;
 }
 
 .sections section .text
@@ -342,6 +352,24 @@ nav
     width: 200px;
     float: left;
 
+}
+
+.section-projects.show.two
+{
+    transform: translateX(-20%);
+}
+
+.section-projects.show.three
+{
+    transform: translateX(20%);
+}
+
+
+.section-projects.one.show h2
+{
+    right: -50%;
+    left: 0;;
+    text-align: center;
 }
 
 
@@ -423,7 +451,7 @@ nav
 
 .section-projects.show span
 {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: bold;
     
 }
@@ -437,10 +465,10 @@ nav
     top: 90px;
     width: 50%;
     bottom: 10px;
-    background:url(./BabyRules.PNG);
+    background-size: 100%;
     background-repeat: no-repeat;
-    background-size:cover;
     background-position: center;
+
 }
 
 .section-projects.show .img::before
@@ -458,7 +486,29 @@ nav
     background-color: var(--hover-color);
 }
 
+.section-projects.one.show .img
+{
+    background:url(../images/BabyRules.PNG);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
+.section-projects.two.show .img
+{
+    background:url(../images/order.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.section-projects.three.show .img
+{
+    background:url(../images/monoprice.PNG);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 
 .section-projects.show .img:hover:before
@@ -471,7 +521,7 @@ nav
 
 .tech-card
 {
-    right: 20px;
+    position: absolute;
     height: 80px;
     width: 350px;
     background-color: var(--bg-lightest);
@@ -513,14 +563,14 @@ nav
 {
     height: auto;
     width: 80px;
-    content:url(./spring-logo.svg);
+    content:url(../images/spring-logo.svg);
 }
 
 .logo.postgresql
 {
     height: 80%;
     width: auto;
-    content:url(./elephant.png);
+    content:url(../images/elephant.png);
 }
 
 
@@ -528,10 +578,19 @@ nav
 .section-projects.show.two .tech-card
 {
     position: absolute;
-    right: 0;
-    left: 90px;
-    bottom: 10px;
+    right: 25%;
+    bottom: 5px;
     z-index: 5;
+    opacity: 0.8;
+}
+
+.section-projects.show.three .tech-card
+{
+    position: absolute;
+    right: 25%;
+    bottom: 5px;
+    z-index: 5;
+    opacity: 0.8;
 }
 
 
@@ -565,12 +624,17 @@ nav
 
     .sections
     {
-        width:90%;
+        width:100%;
     }
-    .sections section
+    .sections section 
     {
         width:100%;
     
+    }
+
+    .section-projects.show
+    {
+        width: 100%;
     }
 
     .sections section h2
@@ -580,8 +644,46 @@ nav
 
     .sections section p
     {
-    
+        
         width: 95%;
+    }
+
+    .section-projects
+    {
+        width: 100%;
+    }
+
+
+    .section-projects.show .img
+    {
+        right: 0;
+        top: 90px;
+        width: 35%;
+        height: 35%;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    
+    }
+    
+    .section-projects.show .img::before
+    {
+        content: '';
+        object-fit: contain;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height:100%;
+        background-color: var(--hover-color);
+    }
+
+    .section-projects.two.show, .section-projects.three.show
+    {
+        transform: translateX(0);
     }
 
     .section-work.show  textarea 
@@ -592,10 +694,32 @@ nav
 
     }
 
+    .tech-card
+{
+    position: absolute;
+    height: 50px;
+    width: 350px;
+
 
 }
 
-@media (max-width: 507px)
+.section-work.show  .text-area
+{
+    
+    width: 300px;
+    font-size: 14px; 
+
+}
+
+
+
+
+
+
+
+}
+
+@media (max-width: 592px)
 {
     .section-headline.show p
     {
@@ -612,6 +736,47 @@ nav
     .section-stacks.show ul
     {
         position: absolute;
-        top:100px;
+        top:10px;
     }
+
+    /* .section-work.show .text-area
+    {
+        bottom: 0;
+        left: 0;
+        height: 100px;
+        overflow: hidden;
+    } */
+    .section-work.show  .text ul
+    {
+        width: 100%;
+        font-size: 14px;
+   
+    }
+    .section-work.show  .text li
+    {
+        display: inline;
+    }
+
+    .section-work.show  .text-area
+    {
+        position: absolute;
+        top: 150px;
+        left: 10px;
+        width: 95%;
+        height: fit-content;
+        font-size: 14px;
+        margin: 0px 10px;
+
+    }
+
+    .section-projects.show .img
+    {
+        display: none;
+    }
+
+    .section-projects.show .text
+    {
+        width: 100%;
+    }
+
 }
