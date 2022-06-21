@@ -306,6 +306,7 @@ nav ul li i::before
 
 .sections section
  {
+
     margin: 20px;  
     background-color: transparent;
     width: 650px;
@@ -315,6 +316,28 @@ nav ul li i::before
     position: relative;
     transition: transform 0.6s ease-in;
     overflow:hidden;
+
+}
+
+section
+{
+    transform: translateX(-400%);
+}
+/* 
+.sections section:nth-child(odd)
+{
+    transform: translateX(400%);
+} */
+
+
+
+.sections section + .show{
+    transform: translateX(0);
+}
+
+.all-projects section + .show
+{
+    transform: translateX(0);
 }
 
 
@@ -356,6 +379,12 @@ nav ul li i::before
     margin-bottom: 10px;
 }
 
+.sections section .text span, .text-area span
+{
+    color: var(--text-active-color);
+    text-decoration:underline var(--line-accent);
+}
+
 .sections section i
 {
     margin-right: 5px;
@@ -375,12 +404,17 @@ nav ul li i::before
     margin-bottom:15px;
     list-style: none;
 }
-.section-headline.show i
+.section-headline
+{
+    transform: translateX(0);
+    transition: 1s;
+}
+.section-headline i
 {
     font-size: 1.25rem;
 }
 
-.section-headline.show h2
+.section-headline h2
 {
     letter-spacing: 3px;
     width: 100%;
@@ -388,7 +422,7 @@ nav ul li i::before
     text-align: center;
 }
 
-.section-headline.show p
+.section-headline p
 {
     letter-spacing: 0.4px;
     width: 100%;
@@ -412,31 +446,24 @@ nav ul li i::before
 
 }
 
-.section-projects
-{
-    transform: translateX(-400%);
-    transition: transform 1.5s ease-in;
-}
 
 .section-projects:nth-child(even)
 {
     transform: translateX(400%);
-    transition: transform 1.5s ease-in;
+    transition: transform 1s ease-in;
 }
 
 .section-projects.show
 {
     transform: translateX(0);
-    transition: transform 1.5s ease-in;
-}
+    transition: transform 1s ease-in;
+} 
 
 
-
-
-/* .section-projects
+.section-projects + .show
 {
-    transform: translateX(20%);
-} */
+    transform: translateX(0%);
+}
 
 
 
@@ -448,6 +475,10 @@ nav ul li i::before
     text-align: center;
 }
 
+.section-work.show .text
+{
+    margin: 0;
+}
 
 .section-work.show  .text-area
 {
@@ -455,18 +486,17 @@ nav ul li i::before
     position: absolute;
     padding: 10px 10px;
     background-color: var(--bg-lightest);
-    width: 400px;
+    width: 420px;
     height: auto;
     right: 10px;
     top: 80px;
     border: 0;
     resize: none;
     font-family: inherit;
-    line-height: 1.5 rem;
-    font-size: 16px; 
+    font-size: 14px; 
     letter-spacing: 1px;
     text-align: left;
-    margin: 20px 0px;
+    margin: 10px 0px;
 }
 
 
@@ -557,12 +587,6 @@ nav ul li i::before
     width: 350px;
 } */
 
-.section-projects.show span
-{
-    font-size: 16px;
-    font-weight: bold;
-    
-}
 
 
 .section-projects.show .img
@@ -697,7 +721,18 @@ li.logo
     content: url(../images/SQLite370.svg);
 }
 
-.section-contact h2
+/* .section-contact .show
+{
+    transform: translateX(0);
+}  */
+
+.section-contact.show 
+{
+    transform: translateX(0%);
+    transition: transform 1s ease;
+}
+
+.section-contact.show h2
 {
     text-align: center;
 }
@@ -722,6 +757,7 @@ li.logo
     font-family: inherit;
     font-size: 20px;
     color: white;
+    cursor: pointer;
 }
 
 
@@ -851,6 +887,20 @@ li.logo
       
     }
 
+    .section-projects.show h3
+    {
+        text-align: center;
+        margin: 0px auto;
+        width: 85%;
+        display: block;
+    }
+
+    .section-projects.show .text
+    {
+        font-size: 13px;
+    }
+    
+
     .section-headline.show p
     {
         position: absolute;
@@ -869,22 +919,29 @@ li.logo
         top:10px;
     }
 
+
+
     .section-work.show .text
     {
         bottom: 0;
         left: 0;
-        height: 100px;
+        height: auto;
         overflow: hidden;
+        padding-top: 20px;
+
     }
     .section-work.show  .text ul
     {
+
         width: 100%;
         font-size: 12px;
+        height: 50px;
    
     }
     .section-work.show  .text li
     {
         display: inline;
+        padding: 20px 10px;
     }
 
     .section-work.show  .text-area
@@ -892,10 +949,11 @@ li.logo
         position: absolute;
         top: 150px;
         left: 10px;
-        width: 95%;
+        width: 98%;
         height: fit-content;
-        font-size: 14px;
+        font-size: 11px;
         margin: 0px 10px;
+        padding: 15px;
 
     }
 
