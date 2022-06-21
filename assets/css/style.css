@@ -4,6 +4,11 @@
 {
     box-sizing: border-box;
 }
+html
+{
+    scroll-behavior:smooth;
+    transform: scroll-behavior translateY(-100px);
+}
 
 :root
 {
@@ -16,7 +21,7 @@
     --bg-lightest: #3a3a3b;
     --shadow-effect: rgba(10, 26, 50, 0.626);
     --hover-color: #4b5a78bf;
-    --green-accent: #4dc89f;
+    --green-accent: rgb(77, 200, 159);
     --section-height: 350px;
 }
 
@@ -54,6 +59,42 @@ body
     animation: color-me-in 3.5s linear;
     
 }
+
+#btntop 
+{
+    width: 45px;
+    height: 40px;
+    bottom: 10px;
+    right: 30%;
+    z-index: 100;
+    background-color: var(--bg-darkest);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+#btntop i
+{
+    position: fixed;
+    font-size: 18px;
+    border: 1px solid var(--line-accent);
+    outline: none;
+    background-color:transparent;
+    color:var(--text-active-color);
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 1s;
+    opacity: 0.9;
+}
+
+
+
 .landing
 {
     
@@ -199,37 +240,54 @@ body
     opacity: 1;
 }
 
+nav
+{
+    visibility: inherit;
+    display: inline-block;
+    position: sticky;
+    height: 50px;
+    z-index: 100;
+    background-color: var(--bg-darkest);
+}
 
 nav ul
 {
     list-style-type:none;
 }
 
+
+
 nav ul li
 {
     display: inline;
     color: var(--text-general-color);
-    margin: 40px 10px;
-    transform: translateX(-150%);
-    transition: transform 0.6ms ease-out;
+    padding: 5px 10px;
+    /* transform: translateX(-150%);
+    transition: transform 0.6ms ease-out; */
+    text-transform: capitalize;
+    font-size: 20px;
+    border-right: 1px solid var(--line-accent);
 }
+
+nav ul li:last-child
+{
+    border-right: none;
+}
+
+nav ul li a
+{
+    text-decoration: none;
+    color: var(--text-general-color);
+    
+}
+
 /* Diffucult one - Target the icon */
 nav ul li i::before
 {
-    font-size: 15px;
+    font-size: 18px;
     margin-right: 10px;
 }
 
-nav
-{
-    visibility: inherit;
-    right: 10%;
-    top:1%;
-    position: fixed;
-    height: 50px;
-    width: 500px;
-    z-index: 100;
-}
 
 
 
@@ -354,15 +412,33 @@ nav
 
 }
 
-.section-projects.show.two
+.section-projects
 {
-    transform: translateX(-20%);
+    transform: translateX(-400%);
+    transition: transform 1.5s ease-in;
 }
 
-.section-projects.show.three
+.section-projects:nth-child(even)
+{
+    transform: translateX(400%);
+    transition: transform 1.5s ease-in;
+}
+
+.section-projects.show
+{
+    transform: translateX(0);
+    transition: transform 1.5s ease-in;
+}
+
+
+
+
+/* .section-projects
 {
     transform: translateX(20%);
-}
+} */
+
+
 
 
 .section-projects.one.show h2
@@ -423,6 +499,28 @@ nav
     
 }
 
+.all-projects 
+{
+    font-family: inherit;
+    font-style: inherit;
+    font-display: inherit;
+}
+
+.all-projects h2
+{
+    font-size: 40px;
+    letter-spacing: 2px;
+    margin: 10px 10px;
+    width: 100%;
+    text-align: center;
+}
+.all-projects h3
+{
+    font-size: 25px;
+    text-align: center;
+}
+
+
 .section-projects.show
 {
     width: 800px;
@@ -431,10 +529,20 @@ nav
 
 .section-projects.show .text
 {
-    width: 350px;
+    padding: 10px;
+    top: 30px;
+    width: 340px;
+    height: min-content;
+    background-color: var(--bg-lighter);
+    opacity: 0.7;
+    z-index: 1;
 }
 
-
+.section-projects.show h3
+{
+    text-align: left;
+    top: 0px;
+}
 
 
 
@@ -461,14 +569,14 @@ nav
 {
     position: absolute;
     overflow: hidden;
-    right: 0;
-    top: 90px;
-    width: 50%;
+    right: 25%;
+    top: 40px;
+    width: 55%;
     bottom: 10px;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-
+    background-size: 100% auto;
+    background-repeat:no-repeat;
+    background-position: auto;
+    z-index: 0;
 }
 
 .section-projects.show .img::before
@@ -522,99 +630,99 @@ nav
 .tech-card
 {
     position: absolute;
-    height: 80px;
-    width: 350px;
-    background-color: var(--bg-lightest);
+    top:5px;
+    bottom: 5px;
+    width: 100px;
+    right: 5px;
     border-radius: 10px;
     margin: 5px;
     display: flex;
     justify-content: center;
     align-content: center;
+    border: 1.5px solid var(--line-accent);
+    background-color: rgba(61, 61, 61, 0.5)
 
 }
 
 .tech-card ul 
 {
     display: flex;
-    flex-flow: row wrap;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    align-content: center;
-
+    flex-direction: column;
+    width: fit-content;
+    margin: 10px;
 }
+
 
 .tech-card ul li
 {
-    margin: 5px 10px;
     height: auto;
-    width: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .card-icon
 {
-    font-size: 2.5em;
+    font-size: 3em;
+    align-self: center;
+    justify-self: center;;
+}
+li.logo
+{
+    height: auto;
+    width: 60px;
+    align-self: center;
 }
 
 .logo.spring
 {
-    height: auto;
     width: 80px;
     content:url(../images/spring-logo.svg);
+    
 }
 
-.logo.postgresql
+.postgresql
 {
-    height: 80%;
-    width: auto;
+    height: 50px;
     content:url(../images/elephant.png);
 }
 
-
-
-.section-projects.show.two .tech-card
+.ionic
 {
-    position: absolute;
-    right: 25%;
-    bottom: 5px;
-    z-index: 5;
-    opacity: 0.8;
+    width: 80px;
+    content:url(../images/Ionic_Logo.svg);
 }
 
-.section-projects.show.three .tech-card
+.sqlite
 {
-    position: absolute;
-    right: 25%;
-    bottom: 5px;
-    z-index: 5;
-    opacity: 0.8;
+    content: url(../images/SQLite370.svg);
 }
 
-
-/* 
-.work.active::before, .work.active::after
+.section-contact h2
 {
-    content: '\f075';
-    font-family: 'Font Awesome 5 Free';
-    color: rgb(67, 169, 67);
-    font-size: 7rem;
+    text-align: center;
+}
+
+.section-contact .text
+{
+    padding: 0 10px;
+}
+
+.contact-btn
+{
     position: absolute;
-    opacity: 0.2;
-    top: 20px;
-    left: 20px;
-    z-index: 0;
-} */
-
-/* .work.active::before
-{
-    color: rgb(104, 104, 200);
-    top: 10px;
-    left:100px;
-    transform: rotateY(180deg); 
-} */
+    padding: 20px 0px;
+    margin: 20px;
+    bottom: 100px;
+    right: 30%;
+    left: 30%;    
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid var(--line-accent);
+    box-shadow: 4px 4px 10px var(--bg-lighter);
+    font-family: inherit;
+    font-size: 20px;
+    color: white;
+}
 
 
 
@@ -640,6 +748,7 @@ nav
     .sections section h2
     {
         font-size: 35px;
+    
     }
 
     .sections section p
@@ -653,38 +762,24 @@ nav
         width: 100%;
     }
 
+        .tech-card
+    {
+        width: 80px;
+    }
+
+
 
     .section-projects.show .img
     {
-        right: 0;
-        top: 90px;
-        width: 35%;
-        height: 35%;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
+        right: 10px;
+        top: 10px;
+        bottom: 10px;
+        width: 70%;
+        z-index: -1;
+        border-radius: 10px;
     
     }
     
-    .section-projects.show .img::before
-    {
-        content: '';
-        object-fit: contain;
-        overflow: hidden;
-        position: absolute;
-        right: 0;
-        left: 0;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        height:100%;
-        background-color: var(--hover-color);
-    }
-
-    .section-projects.two.show, .section-projects.three.show
-    {
-        transform: translateX(0);
-    }
 
     .section-work.show  textarea 
     {
@@ -694,33 +789,68 @@ nav
 
     }
 
-    .tech-card
-{
-    position: absolute;
-    height: 50px;
-    width: 350px;
+    .section-work.show  .text-area
+    {
+        
+        width: 300px;
+        font-size: 14px; 
 
+    }
 
-}
+    .all-projects
+    {
+        width: 100%;
+    }
+    nav ul li
+    {
+        font-size: 18px;
+        padding: 5px;
+    }
 
-.section-work.show  .text-area
-{
-    
-    width: 300px;
-    font-size: 14px; 
-
-}
-
-
-
-
-
-
-
+    nav ul li i::before
+    {
+        font-size: 16px;
+        margin-right: 5px;
+    }
 }
 
 @media (max-width: 592px)
 {
+    body
+    {
+        min-width: 480px;
+        /* width: auto !important; */
+        width: 480px;
+    }
+
+    nav{
+        position: relative;
+        display: block;
+        width: 150px;
+    }
+    nav ul
+    {
+        height: min-content;
+        left: 10px;
+        padding: 0;
+        border-left: 1px solid var(--line-accent);
+    }
+
+    nav ul li
+    {
+        padding: 5px 20px;
+        font-size: 18px;
+        border-right: none;    
+    }
+
+    nav ul li i::before
+    {
+
+        font-size: 15px;
+        margin-right: 15px;
+      
+    }
+
     .section-headline.show p
     {
         position: absolute;
@@ -739,17 +869,17 @@ nav
         top:10px;
     }
 
-    /* .section-work.show .text-area
+    .section-work.show .text
     {
         bottom: 0;
         left: 0;
         height: 100px;
         overflow: hidden;
-    } */
+    }
     .section-work.show  .text ul
     {
         width: 100%;
-        font-size: 14px;
+        font-size: 12px;
    
     }
     .section-work.show  .text li
@@ -769,14 +899,68 @@ nav
 
     }
 
+
+
+    .all-projects
+    {
+        width: 100%;
+    }
+
+    .section-projects.show, .text
+    {
+        padding-left:10px ;
+        width: 100%;
+    }
+
     .section-projects.show .img
     {
         display: none;
     }
 
-    .section-projects.show .text
+    .tech-card
     {
-        width: 100%;
+        position: absolute;
+        height: 50px;
+        width: 98%;
+        top: 280px;
+        left: 0;
+    }
+
+
+    
+    .tech-card ul 
+    {
+        display: flex;
+        flex-flow: row wrap;
+        height: 100%;
+        margin: 0;
+        justify-content: center;
+        align-content: center;
+
+    }
+
+    .tech-card ul li
+    {
+        padding: 5px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0;
+    }
+
+    .card-icon
+    {
+        font-size: 2em;
+    }
+    li.logo
+    {
+        height: 90%;
+        width: 80px;
+        align-self: center;
+    }
+    .logo.postgresql
+    {
+        height: 50px;
     }
 
 }
