@@ -771,14 +771,20 @@ li.logo
     padding: 0 10px;
 }
 
-.contact-btn
+.btn-wrapper
 {
     position: absolute;
-    padding: 20px 0px;
-    margin: 20px;
     bottom: 100px;
-    right: 30%;
-    left: 30%;    
+    width: 100%;
+}
+.contact-btn
+{
+
+    margin:auto;
+    display:block;
+    padding: 10px 30px;
+    bottom: 50px;
+    height: auto;
     border-radius: 5px;
     background-color: transparent;
     border: 1px solid var(--line-accent);
@@ -792,7 +798,7 @@ li.logo
 
 
 
-@media (max-width: 760px) 
+@media screen and (max-width: 760px)
 {
 
     .sections
@@ -868,33 +874,36 @@ li.logo
     }
     nav ul li
     {
-        font-size: 18px;
+        font-size: 16px;
         padding: 5px;
     }
 
     nav ul li i::before
     {
-        font-size: 16px;
+        font-size: 14px;
         margin-right: 5px;
     }
 }
 
-@media (max-width: 592px)
+@media screen and (max-width: 600px)
 {
     body
     {
         min-width: 480px;
-        /* width: auto !important; */
         width: 480px;
     }
 
     nav{
         position: relative;
-        display: block;
-        width: 150px;
+        width: 180px;
+        height: 150px;
     }
     nav ul
     {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
         height: min-content;
         left: 10px;
         padding: 0;
@@ -947,8 +956,6 @@ li.logo
         position: absolute;
         top:10px;
     }
-
-
 
     .section-work.show .text
     {
@@ -1050,4 +1057,146 @@ li.logo
         height: 50px;
     }
 
+}
+
+@media only screen and (max-width:450px)
+{
+    body
+    {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        min-width: 360px;
+        width: 100%;
+
+    }
+
+    .sections section h2
+    {
+        text-align: center;
+        position: absolute;
+        font-size: 20px;
+        width: 100%;
+    }
+
+    .sections section h3
+    {
+        position: absolute;
+        font-size: 15px;
+        top:10px;
+        text-align: center;
+        letter-spacing: 2px;
+        margin: 10px 10px;
+        width: 100%;
+    }
+
+    .sections section .text
+    {
+        top: 40px;
+        font-size: 12px; 
+
+    }
+
+    .sections section .text p
+    {
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+
+    .section-work.show  .text ul
+    {
+
+        width: 90%;
+        font-size: 10px;
+        height: 50px;
+        display: flex;
+        flex-wrap: wrap;
+   
+    }
+    .section-work.show  .text li
+    {
+        width: 100px;
+        padding: 10px 10px;
+    }
+
+    .section-work.show  .text-area
+    {
+        position: absolute;
+        top: 150px;
+        left: 10px;
+        width: 98%;
+        height: fit-content;
+        font-size: 11px;
+        margin: 0px 10px;
+        padding: 15px;
+
+    }
+
+    .all-projects
+    {
+        width: 100%;
+    }
+
+    .section-projects.show, .text
+    {
+        padding-left:10px ;
+        width: 100%;
+        margin: 0;
+    }
+
+    .section-projects.show .p1, .p2{
+        margin: 0;
+        width: 100%;
+    }
+
+
+    .section-projects.show .img
+    {
+        display: none;
+    }
+
+    .tech-card
+    {
+        position: absolute;
+        height: 50px;
+        width: 98%;
+        top: 280px;
+        left: 0;
+    }
+
+
+    
+    .tech-card ul 
+    {
+        display: flex;
+        flex-flow: row wrap;
+        height: 100%;
+        margin: 0;
+        justify-content: center;
+        align-content: center;
+
+    }
+
+    .tech-card ul li
+    {
+        padding: 5px 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0;
+    }
+
+    .card-icon
+    {
+        font-size: 1.5em;
+    }
+    li.logo
+    {
+        height: 90%;
+        width: 70px;
+        align-self: center;
+    }
+    .logo.postgresql
+    {
+        height: 50px;
+    } 
 }
