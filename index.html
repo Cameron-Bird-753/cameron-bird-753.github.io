@@ -4,9 +4,232 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Construction</title>
+    <!-- <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" /> -->
+    <title>Animated Nav</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
   </head>
-  <body>
-    <h1>Under Construction</h1>
+  <body id="top">
+    <div class="landing">
+      <div class="icon">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="top">C</div>
+        <div class="bottom">B</div>
+      </div>
+      <!-- <button id="btn">Click Icone Change</button> -->
+      <!-- <button id="btn2">Top</button> -->
+    </div>
+    <div class="home-container show">
+      <nav>
+        <ul>
+          <li>
+            <i class="fas fa-home"></i><a onclick="navigate('home')">Home</a>
+          </li>
+          <li>
+            <i class="fas fa-user-alt"></i
+            ><a onclick="navigate('education')">Education</a>
+          </li>
+          <li>
+            <i class="fas fa-person-digging"></i
+            ><a onclick="navigate('work')">Work</a>
+          </li>
+          <li>
+            <i class="fas fa-toolbox"></i
+            ><a onclick="navigate('projects')">Projects</a>
+          </li>
+          <li>
+            <i class="fas fa-envelope"></i
+            ><a onclick="navigate('contact')">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sections">
+        <section class="section-headline" id="about">
+          <h2>Hi, I'm Cameron</h2>
+          <div class="text">
+            <p>
+              <i class="fa-solid fa-cubes-stacked"></i>Full Stack Developer
+              based in Calgary, Alberta.
+            </p>
+            <p></p>
+          </div>
+        </section>
+
+        <section class="section-overview">
+          <h2>About</h2>
+          <div class="text">
+            <p>
+              Enjoyed the fast paced world of working in Finance & Financial
+              Services for the last decade. After being involved in, and seeing
+              the power of FinTech solutions and web applications in general, I
+              decided it was time to change things up.
+            </p>
+          </div>
+        </section>
+        <section class="section-studied" id="education">
+          <h2>Things I studied</h2>
+          <div class="text">
+            <ul>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i>Information Technology
+                - Software Development
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i>Post Graduate -
+                Financial Planning
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right"></i>B.Com - Investment
+                Management
+              </li>
+              <li><i class="fa-solid fa-chevron-right"></i>B.Com - Finance</li>
+            </ul>
+          </div>
+        </section>
+        <section class="section-stacks">
+          <h2>Technologies I work with</h2>
+
+          <div class="text">
+            <ul>
+              <li><i class="fa-solid fa-chevron-right"></i>Java</li>
+              <li><i class="fa-solid fa-chevron-right"></i>Spring</li>
+              <li><i class="fa-solid fa-chevron-right"></i>JavaScript</li>
+              <li><i class="fa-solid fa-chevron-right"></i>Node.Js</li>
+              <li><i class="fa-solid fa-chevron-right"></i>TypeScript</li>
+              <li><i class="fa-solid fa-chevron-right"></i>Angular</li>
+              <li><i class="fa-solid fa-chevron-right"></i>Python</li>
+              <li><i class="fa-solid fa-chevron-right"></i>Oracle</li>
+              <li><i class="fa-solid fa-chevron-right"></i>PostgreSQL</li>
+              <li><i class="fa-solid fa-chevron-right"></i>Firebase</li>
+              <li><i class="fa-solid fa-chevron-right"></i>Heroku</li>
+              <li><i class="fa-solid fa-chevron-right"></i>WordPress</li>
+            </ul>
+          </div>
+        </section>
+        <section class="section-work" id="work">
+          <h2>Work Experience</h2>
+          <div class="text">
+            <ul id="work_experience_list">
+              <li><i class="fa-solid fa-chevron-down"></i>Absa Investments</li>
+              <li><i class="fa-solid fa-chevron-down"></i>Kanhym Estates</li>
+              <li><i class="fa-solid fa-chevron-down"></i>BabyRules</li>
+            </ul>
+          </div>
+          <div class="text-area">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Perferendis rerum saepe sit vero aliquid praesentium aut repudiandae
+            a ipsa quod fuga libero necessitatibus molestiae cumque blanditiis
+            distinctio dolor, molestias dolorum excepturi magnam expedita
+            repellendus? Molestiae, quasi. Pariatur commodi iste illum veniam,
+            amet harum, facere deleniti, sequi necessitatibus nam mollitia
+            perferendis?
+          </div>
+        </section>
+        <div class="all-projects">
+          <div class="section-heading">
+            <h2>Projects</h2>
+            <h3>Longest Running</h3>
+          </div>
+          <section class="section-projects one" id="projects">
+            <h3>BabyRules</h3>
+            <div class="text">
+              <p class="p1">
+                One that sparked my initial interest in all things web. When I
+                took over a small business in 2017 it had almost no online
+                presence.
+              </p>
+              <p class="p2">
+                It took me on a journey covering Wordpress, scripting in
+                <span>PHP, UX/UI design, SQL</span> and learnt a great deal
+                about <span>HTML/CSS</span> .
+              </p>
+            </div>
+            <div class="tech-card">
+              <ul>
+                <li><span>Stack</span></li>
+                <li><i class="fa-brands fa-wordpress card-icon"></i></li>
+                <li><i class="fa-brands fa-css3 card-icon"></i></li>
+                <li><i class="fa-brands fa-html5 card-icon"></i></li>
+              </ul>
+            </div>
+            <div class="img"></div>
+          </section>
+          <div class="section-heading">
+            <h3>Currently Working on</h3>
+          </div>
+          <section class="section-projects two">
+            <h3>Restaurant Ecommerce</h3>
+            <div class="text">
+              <p class="p1">
+                Using micro services, the site offers customers the ability to
+                order food online, with a content management application for
+                staff users to manage the restaurant operations. Both backend
+                applications were built using <span>Spring Boot</span>,
+                <span>Spring Security</span> and is supported by
+                <span>PostgreSQL</span>. <br /><br />
+                The frontend application is built in <span>Angular</span> with
+                styling via <span>Bootstrap.</span>
+              </p>
+            </div>
+            <div class="tech-card">
+              <ul>
+                <li><span>Stack</span></li>
+                <li><i class="fa-brands fa-angular card-icon"></i></li>
+                <li><i class="fa-brands fa-bootstrap card-icon"></i></li>
+                <li class="logo spring"></li>
+                <li class="logo postgresql"></li>
+              </ul>
+            </div>
+            <div class="img"></div>
+          </section>
+          <section class="section-projects three">
+            <h3>Home Audio</h3>
+            <div class="text">
+              <p class="p1">
+                I have a not so 'smart' audio amplifier used for controlling
+                different audio zones. Luckily, it features a RS232 serial port
+                which I can use as an interface. <br /><br />
+                The current application is built in <span>Angular</span> and
+                <span>Node.js</span> which currently works as a web application,
+                but I adding the finishing touches using <span>Ionic</span> to
+                create a mobile application. <br /><br />The server is hosted on
+                Rasberry PI, and connected to the amp.
+              </p>
+            </div>
+            <div class="tech-card">
+              <ul>
+                <li><span>Stack</span></li>
+                <li><i class="fa-brands fa-angular card-icon"></i></li>
+                <li><i class="fa-brands fa-bootstrap card-icon"></i></li>
+                <li class="logo ionic"></li>
+                <li class="logo sqlite"></li>
+              </ul>
+            </div>
+            <div class="img"></div>
+          </section>
+        </div>
+        <section class="section-contact" id="contact">
+          <h2>Contact</h2>
+          <div class="text">
+            <p>
+              Want to get in touch to discuss opportunities, talk code, or why
+              the number is 42, get in touch.
+            </p>
+          </div>
+          <button class="contact-btn" onclick="location.href='mailto:em@i.l'">
+            Connect
+          </button>
+        </section>
+      </div>
+    </div>
+    <a id="btntop" href="#top"><i class="fa-solid fa-angles-up"></i></a>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
