@@ -1,3 +1,6 @@
+window.onbeforeunload = function() {
+    return "Dude, are you sure you want to refresh? Think of the kittens!";
+}
 const workExp = JSON.parse(JSON.stringify(
    { "workExpEntries":
     [
@@ -21,35 +24,36 @@ let prevClick = workList[0];
 let workExpData = workExp;
 document.querySelector('.text-area').innerHTML = workExp.workExpEntries[0].absa;
 
-// window.addEventListener("load", function()
-// {
-//     const icon = document.querySelector('.icon');
-//     const topDiv = document.querySelector('.top');
-//     const bottomDiv = document.querySelector('.bottom');
-//     const iconLine = document.querySelectorAll('.line');
-//     const landingPage = document.querySelector('.landing');
-//     const homePage = document.querySelector('.home-container');
+window.addEventListener("load", function()
+{
+    const icon = document.querySelector('.icon');
+    const topDiv = document.querySelector('.top');
+    const bottomDiv = document.querySelector('.bottom');
+    const iconLine = document.querySelectorAll('.line');
+    const landingPage = document.querySelector('.landing');
+    const homePage = document.querySelector('.home-container');
 
-//     homePage.classList.remove('show');
-//     iconLine[0].classList.add('one');
-//     iconLine[1].classList.add('two');
-//     topDiv.classList.add('show');
-//     bottomDiv.classList.add('show');    
-//     setTimeout(function() 
-//         { 
-//             hideIcone(icon, homePage) 
-//         }, 3000);
-// });
+    homePage.classList.remove('show');
+    iconLine[0].classList.add('one');
+    iconLine[1].classList.add('two');
+    topDiv.classList.add('show');
+    bottomDiv.classList.add('show');    
+    setTimeout(function() 
+        { 
+            hideIcone(icon, homePage) 
+        }, 3000);
+});
 
-// function hideIcone(icon, homePage)
-// {
-//     icon.classList.add('hide');
-//     setTimeout(function() 
-//     { 
-//         icon.parentElement.remove();
-//         homePage.classList.add('show');
-//     }, 1500);
-// }
+function hideIcone(icon, homePage)
+{
+    icon.classList.add('hide');
+    setTimeout(function() 
+    { 
+        icon.parentElement.remove();
+        homePage.classList.add('show');
+        document.querySelector('.section-headline').classList.add('show');
+    }, 1500);
+}
 
 
 
@@ -106,69 +110,68 @@ prevClick.classList.add('active');
     })
  })
 
-const showProjectsBtn = document.getElementById('tog');
-const projects = document.querySelectorAll('.section-projects');
-console.log(projects);
- showProjectsBtn.addEventListener('click', ()=>
- {
-    projects.forEach((project) =>
-    {
-        project.classList.toggle('show');
-    })
-
- })
-
-
-//  function addHtmlContent(){
-//     console.log('scrolling');
-//     window.addEventListener('scroll', this.loadMore);
-//   }
-  
-//   function removeHtmContent(){
-//       window.removeEventListener('scroll', this.loadMore);
-//   }
-  
-//   function loadMore(){
-//     console.log(window.innerHeight, document.scrollingElement.scrollHeight);
-//       if (window.innerHeight + document.documentElement.scrollTop === document.scrollingElement.scrollHeight) {
-//           // Do load more content here!
-//       }
-//   }
-
-//   window.addEventListener('scroll', this.loadMore);
-//   window.removeEventListener('scroll', this.loadMore);
 const sections =  document.querySelectorAll('section');
+const sectionTitles =  document.querySelectorAll('.section-heading');
 console.log(sections);
 
 window.addEventListener('scroll', displaySections);
 
 
+
   function displaySections()
   {
+      const currentHeight = document.documentElement.scrollTop;
+      let scrollToTop = document.getElementById('btntop');
+      if(currentHeight > 250)
+      {
+        scrollToTop.style.visibility = 'visible';
+      }
+      else
+      {
+        scrollToTop.style.visibility = 'hidden';
+      }
       console.log(window.innerHeight);
   
-      const currentHeight = document.documentElement.scrollTop;
+
       console.log('currentHeight',currentHeight);
       sections.forEach((section) => 
       {
         console.log('section ffrom TYop',section.offsetTop);
-        if(section.offsetTop < currentHeight + 900)
+        if(section.offsetTop < currentHeight + 980)
         {
           console.log('adding show');
           section.classList.add('show');
         }
-
-        // else
-        // {
-        //   section.classList.remove('show');
-        // }
       });
-    //   {
-    //     //   const sectionTop = section.getBoundingClientRect().top;
 
-    //     //   console.log(sectionTop);
-
-    //   };
-  
-    
+      sectionTitles.forEach((title) => 
+      {
+        console.log('section ffrom TYop',title.offsetTop);
+        if(title.offsetTop < currentHeight + 980)
+        {
+            title.classList.add('show');
+        }
+      });
   }
+
+function navigate(input) 
+{
+    switch (input) {
+        case 'education':
+            window.scrollBy(0, 1350);
+            break;
+        case 'work':
+            window.scrollBy(0, 2050);
+            break;
+        case 'projects':
+            window.scrollBy(0, 2500);
+            break;
+        case 'contact':
+            window.scrollBy(0, 3850);
+            break;
+    
+
+        default:
+            break;
+    }
+} 
