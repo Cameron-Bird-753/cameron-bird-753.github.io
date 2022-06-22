@@ -1185,6 +1185,7 @@ li.logo
         position: absolute;
         height: 50px;
         width: 95%;
+        margin:10px;
         top: 280px;
         left: 0;
     }
