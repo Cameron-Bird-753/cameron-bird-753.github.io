@@ -73,7 +73,6 @@ prevClick.classList.add('active');
             }
             else if (text === 'Kanhym Estates')
             {
-                console.log('kanhym', workExp.absa);
                 document.querySelector('.text-area').innerHTML += workExp.workExpEntries[1].kanhym;
                 
             }
@@ -89,9 +88,12 @@ prevClick.classList.add('active');
 
 const sections =  document.querySelectorAll('section');
 const sectionTitles =  document.querySelectorAll('.section-heading');
-console.log(sections);
+
 
 window.addEventListener('scroll', displaySections);
+window.addEventListener('touchmove', displaySections);
+let ua = navigator.userAgent;
+console.log(ua);
 
 
 
@@ -107,10 +109,10 @@ window.addEventListener('scroll', displaySections);
       {
         scrollToTop.style.visibility = 'hidden';
       }
-      console.log(window.innerHeight);
+    //   console.log(window.innerHeight);
   
 
-      console.log('currentHeight',currentHeight);
+    //   console.log('currentHeight',currentHeight);
       sections.forEach((section) => 
       {
         console.log('section ffrom TYop',section.offsetTop);
@@ -123,7 +125,7 @@ window.addEventListener('scroll', displaySections);
 
       sectionTitles.forEach((title) => 
       {
-        console.log('section ffrom TYop',title.offsetTop);
+
         if(title.offsetTop < currentHeight + 980)
         {
             title.classList.add('show');

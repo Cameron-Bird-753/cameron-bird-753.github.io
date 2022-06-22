@@ -239,6 +239,7 @@ body
     margin-top: 50px;
     justify-content: center;
     opacity: 1;
+    overflow-x: hidden;
 }
 
 nav
@@ -323,7 +324,7 @@ nav ul li i::before
 section
 {
     transform: translateX(-400%);
-    transition: transform 1.3s ease-in;
+    transition: transform 1s ease-in;
     opacity: 0;
 
 }
@@ -333,7 +334,7 @@ section
 .sections section:nth-child(odd)
 {
     transform: translateX(400%);
-    transition: transform 1.3s ease-in;
+    transition: transform 1s ease-in;
     opacity: 0;
 }
 
@@ -341,7 +342,7 @@ section
 
 .sections section.show{
     transform: translateX(0);
-    transition: transform 1.3s ease-in, opacity 1.3s ease;
+    transition: transform 1s ease-in, opacity 1s ease;
     opacity: 1;
 }
 
@@ -472,20 +473,20 @@ section
 .section-heading.show
 {
     transform: translateX(0);
-    transition: transform 1.3s ease;
+    transition: transform 1s ease;
 }
 
 
 .section-projects:nth-child(even)
 {
     transform: translateX(400%);
-    transition: transform 1.3s ease-in;
+    transition: transform 1s ease-in;
 }
 
 .section-projects.show
 {
     transform: translateX(0);
-    transition: transform 1.3s ease-in;
+    transition: transform 1s ease-in;
 } 
 
 
