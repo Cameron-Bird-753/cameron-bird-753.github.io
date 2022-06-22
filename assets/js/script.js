@@ -19,7 +19,6 @@ const workExp = JSON.parse(JSON.stringify(
 }));
 
 const workList = document.querySelector('#work_experience_list').querySelectorAll('li');
-// console.log(workList);
 let prevClick = workList[0];
 let workExpData = workExp;
 document.querySelector('.text-area').innerHTML = workExp.workExpEntries[0].absa;
@@ -55,23 +54,6 @@ function hideIcone(icon, homePage)
     }, 1500);
 }
 
-
-
-
-
-// btn.addEventListener('click', () =>
-// {
-//     icon.classList.toggle('hide');
-//     // icon.parentNode.classList.toggle('hide')
-// });
-
-// btn2.addEventListener('click', () =>
-// {
-//     topDiv.classList.toggle('show');
-//     bottomDiv.classList.toggle('show');
-// });
-
-
 prevClick.classList.add('active');
  workList.forEach( listItem =>
  {
@@ -101,11 +83,6 @@ prevClick.classList.add('active');
             }
             prevClick = listItem;
         }
-        // else
-        // {
-        //     listItem.classList.add('active')
-        //     prevClick = listItem;
-        // }
         
     })
  })
