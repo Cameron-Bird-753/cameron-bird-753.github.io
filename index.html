@@ -222,17 +222,16 @@
             </p>
           </div>
           <div class="btn-wrapper">
-            <button
-              class="contact-btn"
-              onclick="href='mailto:dev.cameron.bird@gmail.com'"
-            >
-              Connect
-            </button>
+            <form method="post" action="mailto:dev.cameron.bird@gmail.com">
+              <input class="contact-btn" type="submit" value="Connect" />
+            </form>
           </div>
         </section>
       </div>
     </div>
-    <a id="btntop" href="#top"><i class="fa-solid fa-angles-up"></i></a>
+    <a id="btntop" href="#top" style="visibility: hidden"
+      ><i class="fa-solid fa-angles-up"></i
+    ></a>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
