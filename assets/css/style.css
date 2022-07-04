@@ -12,7 +12,7 @@ html
 
 :root
 {
-    --text-general-color: #f0f0f0;
+    --text-general-color: #ffffff;
     --text-active-color: #5eea92;
     --line-accent: #569ed1;
     --bg-darkest: #171c21;
@@ -527,6 +527,7 @@ section
     letter-spacing: 1px;
     text-align: left;
     margin: 10px 0px;
+    color: white;
 }
 
 
@@ -591,11 +592,17 @@ section
 {
     padding: 10px;
     top: 30px;
-    width: 340px;
+    width: 500px;
     height: min-content;
     background-color: var(--bg-lighter);
     opacity: 0.7;
     z-index: 1;
+}
+
+.section-projects.show .text .p1, .p2
+{
+    font-family: inherit;
+    color: white;
 }
 
 .section-projects.show h3
@@ -616,7 +623,6 @@ section
     top: 80px;
     width: 350px;
 } */
-
 
 
 .section-projects.show .img
